@@ -607,40 +607,173 @@ code, .mono {
 
 /* About grid */
 .about-grid {
+  position: relative;
   display: grid;
   grid-template-columns: 1.4fr 1fr;
   gap: 40px;
   align-items: start;
+  --mx: 50%;
+  --my: 50%;
 }
 
-.fun-facts {
+.about-grid::before {
+  content: "";
+  position: absolute;
+  inset: -60px;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  background: radial-gradient(
+    560px circle at var(--mx) var(--my),
+    rgba(110, 231, 183, 0.14),
+    rgba(96, 165, 250, 0.06) 40%,
+    transparent 65%
+  );
+}
+
+.about-grid:hover::before {
+  opacity: 1;
+}
+
+.about-text,
+.achievements {
+  position: relative;
+  z-index: 1;
+}
+
+/* Interest chips */
+.interest-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.interest-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 6px 14px 6px 6px;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--surface-border);
+  font-family: var(--mono);
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1), border-color 0.25s ease,
+    box-shadow 0.25s ease, color 0.25s ease;
+}
+
+.chip-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  font-size: 0.9rem;
+}
+
+.interest-chip:hover {
+  transform: translateY(-3px) scale(1.04);
+  color: var(--text);
+  border-color: rgba(110, 231, 183, 0.5);
+  box-shadow: 0 10px 24px -12px rgba(110, 231, 183, 0.4);
+}
+
+/* Achievements (badge shelf) */
+.achievements {
   background: var(--surface);
   border: 1px solid var(--surface-border);
   border-radius: var(--radius);
   padding: 24px;
 }
 
-.facts-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+.badge-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  perspective: 800px;
+}
+
+.badge-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid var(--surface-border);
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
+  padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 10px;
+  transform-style: preserve-3d;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.facts-list li {
+.badge-card:hover {
+  border-color: var(--badge-color, var(--accent));
+  box-shadow: 0 16px 32px -18px var(--badge-color, var(--accent));
+}
+
+.badge-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.16), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.7s ease;
+  pointer-events: none;
+}
+
+.badge-card:hover::before {
+  left: 150%;
+}
+
+.badge-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
   display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  color: var(--text-dim);
-  font-size: 0.92rem;
-  line-height: 1.5;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  border: 1px solid var(--badge-color, var(--accent));
+  box-shadow: 0 0 16px -3px var(--badge-color, var(--accent));
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.08), transparent 70%);
 }
 
-.fact-emoji {
-  flex-shrink: 0;
-  font-size: 1.1rem;
+.badge-title {
+  margin: 0;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.badge-sub {
+  margin: 0;
+  font-size: 0.74rem;
+  color: var(--text-dim);
+  line-height: 1.4;
+}
+
+.badge-nasa {
+  --badge-color: #c084fc;
+}
+
+.badge-gold {
+  --badge-color: #fbbf24;
+}
+
+.badge-startup {
+  --badge-color: #fb923c;
+}
+
+.badge-duo {
+  --badge-color: #6ee7b7;
 }
 
 /* Contact cards */
@@ -748,6 +881,10 @@ code, .mono {
   }
 
   .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .badge-grid {
     grid-template-columns: 1fr;
   }
 }
