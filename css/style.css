@@ -613,6 +613,81 @@ code, .mono {
   align-items: start;
 }
 
+/* About timeline (narrative broken into commit-style entries) */
+.about-timeline {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: 30px;
+}
+
+.about-timeline::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 8px;
+  bottom: 8px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--accent), var(--accent-2) 55%, var(--accent-3));
+  opacity: 0.3;
+}
+
+.about-entry {
+  position: relative;
+  margin-bottom: 26px;
+}
+
+.about-entry:last-child {
+  margin-bottom: 0;
+}
+
+.about-entry::before {
+  content: "";
+  position: absolute;
+  left: -30px;
+  top: 7px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--entry-color, var(--accent));
+  box-shadow: 0 0 0 4px rgba(110, 231, 183, 0.1), 0 0 14px -2px var(--entry-color, var(--accent));
+}
+
+.about-entry-1 {
+  --entry-color: var(--accent);
+}
+
+.about-entry-2 {
+  --entry-color: var(--accent-2);
+}
+
+.about-entry-3 {
+  --entry-color: var(--accent-3);
+}
+
+.about-label {
+  display: block;
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.04em;
+  color: var(--entry-color, var(--accent));
+  margin-bottom: 8px;
+}
+
+.about-entry p {
+  margin: 0;
+  color: var(--text-dim);
+}
+
+.hl {
+  color: var(--text);
+  font-weight: 600;
+  background: linear-gradient(120deg, rgba(110, 231, 183, 0.16), rgba(96, 165, 250, 0.1));
+  padding: 0 5px;
+  border-radius: 4px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
 /* Interest chips */
 .interest-grid {
   display: flex;
