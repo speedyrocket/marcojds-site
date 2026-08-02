@@ -44,6 +44,52 @@ const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)
   targets.forEach((el) => observer.observe(el));
 })();
 
+/* ---------- Stat count-up ---------- */
+(function statCountUp() {
+  const stats = document.querySelectorAll(".stat-number[data-count]");
+  if (!stats.length) return;
+
+  function animate(el) {
+    const target = parseInt(el.dataset.count, 10) || 0;
+
+    if (prefersReducedMotion) {
+      el.textContent = target;
+      return;
+    }
+
+    const duration = 1000;
+    const start = performance.now();
+
+    function tick(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = Math.round(eased * target);
+      if (progress < 1) requestAnimationFrame(tick);
+    }
+
+    requestAnimationFrame(tick);
+  }
+
+  if (!("IntersectionObserver" in window)) {
+    stats.forEach(animate);
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animate(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.4 }
+  );
+
+  stats.forEach((el) => observer.observe(el));
+})();
+
 /* ---------- Typewriter effect ---------- */
 (function typewriter() {
   const el = document.getElementById("typewriter-text");
