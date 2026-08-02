@@ -607,39 +607,10 @@ code, .mono {
 
 /* About grid */
 .about-grid {
-  position: relative;
   display: grid;
   grid-template-columns: 1.4fr 1fr;
   gap: 40px;
   align-items: start;
-  --mx: 50%;
-  --my: 50%;
-}
-
-.about-grid::before {
-  content: "";
-  position: absolute;
-  inset: -60px;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  background: radial-gradient(
-    560px circle at var(--mx) var(--my),
-    rgba(110, 231, 183, 0.14),
-    rgba(96, 165, 250, 0.06) 40%,
-    transparent 65%
-  );
-}
-
-.about-grid:hover::before {
-  opacity: 1;
-}
-
-.about-text,
-.achievements {
-  position: relative;
-  z-index: 1;
 }
 
 /* Interest chips */
@@ -770,6 +741,14 @@ code, .mono {
 
 .badge-startup {
   --badge-color: #fb923c;
+}
+
+.badge-pg {
+  --badge-color: #60a5fa;
+}
+
+.badge-mondelez {
+  --badge-color: #f472b6;
 }
 
 .badge-duo {

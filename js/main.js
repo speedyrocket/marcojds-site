@@ -19,21 +19,6 @@ const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)
   update();
 })();
 
-/* ---------- About: mouse-tracked spotlight ---------- */
-(function aboutSpotlight() {
-  const grid = document.querySelector(".about-grid");
-  if (!grid || prefersReducedMotion) return;
-
-  grid.addEventListener("pointermove", (e) => {
-    if (e.pointerType && e.pointerType !== "mouse") return;
-    const rect = grid.getBoundingClientRect();
-    const x = ((e.clientX - rect.left) / rect.width) * 100;
-    const y = ((e.clientY - rect.top) / rect.height) * 100;
-    grid.style.setProperty("--mx", x + "%");
-    grid.style.setProperty("--my", y + "%");
-  });
-})();
-
 /* ---------- Achievements: 3D badge tilt ---------- */
 (function badgeTilt() {
   if (prefersReducedMotion) return;
