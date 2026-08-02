@@ -72,28 +72,28 @@
     <section id="projects" class="section">
       <div class="container">
         <h2 class="reveal"><span class="section-index">01</span>Projects</h2>
-        <p class="section-lede reveal">Many built but nothing published here yet — here's what's queued up.</p>
+        <p class="section-lede reveal">I've built many things but haven't shared much yet — still thinking about which ones to showcase.</p>
 
         <div class="code-editor reveal">
           <div class="editor-tabs">
             <span class="editor-tab active">projects.config.js</span>
           </div>
           <div class="editor-body">
-            <pre><code><span class="tok-comment">// status: always a work in progress</span>
+            <pre><code><span class="tok-comment">// status: thinking about what I want to share here</span>
 <span class="tok-key">const</span> <span class="tok-var">projects</span> = [
   {
     <span class="tok-key">name</span>: <span class="tok-string">"???"</span>,
-    <span class="tok-key">status</span>: <span class="tok-string">"planning"</span>,
-    <span class="tok-key">stack</span>: [<span class="tok-string">"TBD"</span>],
+    <span class="tok-key">status</span>: <span class="tok-string">"???"</span>,
+    <span class="tok-key">stack</span>: [<span class="tok-string">"???"</span>],
   },
   {
     <span class="tok-key">name</span>: <span class="tok-string">"???"</span>,
-    <span class="tok-key">status</span>: <span class="tok-string">"idea"</span>,
-    <span class="tok-key">stack</span>: [<span class="tok-string">"TBD"</span>],
+    <span class="tok-key">status</span>: <span class="tok-string">"???"</span>,
+    <span class="tok-key">stack</span>: [<span class="tok-string">"???"</span>],
   },
 ];
 
-<span class="tok-var">projects</span>.<span class="tok-fn">forEach</span>(<span class="tok-var">p</span> <span class="tok-punct">=></span> <span class="tok-fn">ship</span>(<span class="tok-var">p</span>)); <span class="tok-comment">// eventually™</span></code></pre>
+<span class="tok-var">projects</span>.<span class="tok-fn">forEach</span>(<span class="tok-var">p</span> <span class="tok-punct">=></span> <span class="tok-fn">share</span>(<span class="tok-var">p</span>)); <span class="tok-comment">// eventually</span></code></pre>
           </div>
         </div>
 
@@ -101,10 +101,10 @@
           <div class="card repo-card card-placeholder reveal">
             <div class="repo-card-top">
               <span class="card-index">01</span>
-              <span class="status-pill status-planning"><span class="status-dot"></span>planning</span>
+              <span class="status-pill status-idea"><span class="status-dot"></span>pending</span>
             </div>
             <h3>Coming soon</h3>
-            <p>Project in progress.</p>
+            <p>Project TBD.</p>
             <div class="tag-row">
               <span class="tag tag-sm">TBD</span>
             </div>
@@ -112,10 +112,10 @@
           <div class="card repo-card card-placeholder reveal" style="transition-delay: 80ms;">
             <div class="repo-card-top">
               <span class="card-index">02</span>
-              <span class="status-pill status-idea"><span class="status-dot"></span>idea</span>
+              <span class="status-pill status-idea"><span class="status-dot"></span>pending</span>
             </div>
             <h3>Coming soon</h3>
-            <p>Project in progress.</p>
+            <p>Project TBD.</p>
             <div class="tag-row">
               <span class="tag tag-sm">TBD</span>
             </div>
@@ -123,10 +123,10 @@
           <div class="card repo-card card-placeholder reveal" style="transition-delay: 160ms;">
             <div class="repo-card-top">
               <span class="card-index">03</span>
-              <span class="status-pill status-idea"><span class="status-dot"></span>idea</span>
+              <span class="status-pill status-idea"><span class="status-dot"></span>pending</span>
             </div>
             <h3>Coming soon</h3>
-            <p>Project in progress.</p>
+            <p>Project TBD.</p>
             <div class="tag-row">
               <span class="tag tag-sm">TBD</span>
             </div>
@@ -142,188 +142,41 @@
         <div class="about-grid">
           <div class="about-text">
             <p class="section-lede reveal">
-              By trade I'm a Senior IT Manager / Cloud Product Engineer at Procter &amp; Gamble.
-              I actually started out in Manufacturing Engineering, specializing in
-              Mechatronics &amp; Robotics — but over the years I kept picking up more of the
-              stack: cloud infrastructure, automation, backend, frontend. At this point I
-              think of myself less as "the robotics guy who does IT" and more as a
-              full-stack engineer who happens to have a robotics background.
+              Hey, I'm Marco 👋 By day I keep cloud infrastructure running for Procter &amp; Gamble.
+              By night — and most weekends — I'm usually elbow-deep in some random side
+              project, most of which never see daylight. This site is one of the ones that did.
             </p>
             <p class="section-lede reveal" style="transition-delay: 60ms;">
-              Outside the day job I'm a serial side-project starter — I co-founded a food
-              delivery startup during the pandemic and made it to the finals of the NASA
-              International Space Apps Challenge. My favorite thing to do is learn new
-              things, mostly to discover how much more there is to learn.
+              I actually started out studying Manufacturing Engineering with a focus on
+              robotics, which is a roundabout way of saying I have no formal software
+              degree — I just kept building things until "full-stack engineer" fit better
+              than whatever my job title says.
             </p>
-            <div class="tag-row reveal" style="transition-delay: 120ms;">
-              <span class="tag">Cloud Infrastructure</span>
-              <span class="tag">Azure</span>
-              <span class="tag">Automation</span>
-              <span class="tag">Full-Stack Dev</span>
-              <span class="tag">SRE</span>
-              <span class="tag">Scrum</span>
+            <p class="section-lede reveal" style="transition-delay: 120ms;">
+              I'm the kind of person who'll happily go down a rabbit hole learning something
+              completely unrelated to what I'm supposed to be doing, just because it seemed
+              interesting. This site — and whatever ends up in the projects section — is
+              mostly a byproduct of that.
+            </p>
+            <div class="tag-row reveal" style="transition-delay: 180ms;">
+              <span class="tag">☁️ Cloud &amp; infra</span>
+              <span class="tag">🤖 Robotics</span>
+              <span class="tag">🍜 Startups</span>
+              <span class="tag">🥁 Drumline</span>
+              <span class="tag">🗣️ 5 languages, badly</span>
             </div>
           </div>
 
-          <div class="stats-card reveal" style="transition-delay: 80ms;">
-            <div class="stat">
-              <span class="stat-number" data-count="5">0</span><span class="stat-suffix">+</span>
-              <span class="stat-label">years in cloud &amp; software</span>
-            </div>
-            <div class="stat">
-              <span class="stat-number" data-count="17">0</span>
-              <span class="stat-label">competition awards &amp; honors</span>
-            </div>
-            <div class="stat">
-              <span class="stat-number" data-count="6">0</span>
-              <span class="stat-label">certifications</span>
-            </div>
-            <div class="stat">
-              <span class="stat-number" data-count="5">0</span>
-              <span class="stat-label">languages spoken</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="subsection">
-          <h3 class="mono-heading reveal">// experience</h3>
-          <div class="timeline">
-            <div class="timeline-item reveal">
-              <span class="timeline-dot"></span>
-              <div class="timeline-content">
-                <div class="timeline-meta">
-                  <span class="timeline-role">Senior IT Manager, Cloud Product Engineer</span>
-                  <span class="timeline-date">Dec 2024 — Present</span>
-                </div>
-                <p class="timeline-org">Procter &amp; Gamble</p>
-              </div>
-            </div>
-            <div class="timeline-item reveal" style="transition-delay: 60ms;">
-              <span class="timeline-dot"></span>
-              <div class="timeline-content">
-                <div class="timeline-meta">
-                  <span class="timeline-role">IT Manager, Cloud Product Engineer</span>
-                  <span class="timeline-date">Dec 2022 — Dec 2024</span>
-                </div>
-                <p class="timeline-org">Procter &amp; Gamble</p>
-              </div>
-            </div>
-            <div class="timeline-item reveal" style="transition-delay: 120ms;">
-              <span class="timeline-dot"></span>
-              <div class="timeline-content">
-                <div class="timeline-meta">
-                  <span class="timeline-role">IT Cloud Operations Intern</span>
-                  <span class="timeline-date">Jul 2021 — Jun 2022</span>
-                </div>
-                <p class="timeline-org">Procter &amp; Gamble · Champion, P&amp;G Next IT 2021</p>
-              </div>
-            </div>
-            <div class="timeline-item reveal" style="transition-delay: 180ms;">
-              <span class="timeline-dot"></span>
-              <div class="timeline-content">
-                <div class="timeline-meta">
-                  <span class="timeline-role">Co-founder &amp; CTO</span>
-                  <span class="timeline-date">Apr 2020 — Sep 2020</span>
-                </div>
-                <p class="timeline-org">Foodpicks — online marketplace for independent food providers</p>
-              </div>
-            </div>
-            <div class="timeline-item reveal" style="transition-delay: 240ms;">
-              <span class="timeline-dot"></span>
-              <div class="timeline-content">
-                <div class="timeline-meta">
-                  <span class="timeline-role">Technical Manager</span>
-                  <span class="timeline-date">Jan 2019 — Jul 2021</span>
-                </div>
-                <p class="timeline-org">SME (student org, De La Salle University)</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="split-grid">
-          <div class="subsection reveal">
-            <h3 class="mono-heading">// certifications</h3>
-            <div class="cert-grid">
-              <div class="cert-card">
-                <span class="cert-year">2023</span>
-                <p>Commvault Certified Professional</p>
-              </div>
-              <div class="cert-card">
-                <span class="cert-year">2023</span>
-                <p>Professional Scrum Master I (PSM1)</p>
-              </div>
-              <div class="cert-card">
-                <span class="cert-year">2022</span>
-                <p>SRE Foundation</p>
-              </div>
-              <div class="cert-card">
-                <span class="cert-year">2021</span>
-                <p>ITIL&reg;4 Foundation</p>
-              </div>
-              <div class="cert-card">
-                <span class="cert-year">2021</span>
-                <p>Azure Administrator Associate (AZ-104)</p>
-              </div>
-              <div class="cert-card">
-                <span class="cert-year">2021</span>
-                <p>Azure Fundamentals (AZ-900)</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="subsection reveal" style="transition-delay: 80ms;">
-            <h3 class="mono-heading">// languages</h3>
-            <ul class="lang-list">
-              <li class="lang-item">
-                <span class="lang-name">English</span>
-                <span class="lang-bar"><span class="lang-fill" style="width: 100%;"></span></span>
-              </li>
-              <li class="lang-item">
-                <span class="lang-name">Filipino</span>
-                <span class="lang-bar"><span class="lang-fill" style="width: 100%;"></span></span>
-              </li>
-              <li class="lang-item">
-                <span class="lang-name">Chinese</span>
-                <span class="lang-bar"><span class="lang-fill" style="width: 100%;"></span></span>
-              </li>
-              <li class="lang-item">
-                <span class="lang-name">Italian</span>
-                <span class="lang-bar"><span class="lang-fill" style="width: 75%;"></span></span>
-              </li>
-              <li class="lang-item">
-                <span class="lang-name">Spanish</span>
-                <span class="lang-bar"><span class="lang-fill" style="width: 30%;"></span></span>
-              </li>
+          <div class="fun-facts reveal" style="transition-delay: 80ms;">
+            <p class="mono-heading">// a few fun facts</p>
+            <ul class="facts-list">
+              <li><span class="fact-emoji">🚀</span> Went to the finals of the NASA Space Apps Challenge.</li>
+              <li><span class="fact-emoji">🥇</span> Won gold at an international robotics olympiad as a teenager.</li>
+              <li><span class="fact-emoji">🍱</span> Co-founded a food delivery startup in the middle of a pandemic.</li>
+              <li><span class="fact-emoji">🥁</span> Used to play drums in my university's drumline.</li>
+              <li><span class="fact-emoji">🦉</span> Hit the top 1% on Duolingo one year. Send help.</li>
             </ul>
           </div>
-        </div>
-
-        <div class="subsection">
-          <h3 class="mono-heading reveal">// highlight reel</h3>
-          <div class="achieve-grid">
-            <div class="achieve-card reveal">
-              <span class="achieve-icon">🚀</span>
-              <h4>NASA Space Apps — Global Finalist</h4>
-              <p>Top 37 of 4,534 teams worldwide, 2021.</p>
-            </div>
-            <div class="achieve-card reveal" style="transition-delay: 60ms;">
-              <span class="achieve-icon">🏆</span>
-              <h4>Champion, P&amp;G Next IT 2021</h4>
-              <p>1st place out of 400+ participants.</p>
-            </div>
-            <div class="achieve-card reveal" style="transition-delay: 120ms;">
-              <span class="achieve-icon">🥇</span>
-              <h4>Gold Medalist, Int'l Robotics Olympiad</h4>
-              <p>Mission Challenge category, Beijing 2017.</p>
-            </div>
-            <div class="achieve-card reveal" style="transition-delay: 180ms;">
-              <span class="achieve-icon">🥈</span>
-              <h4>Champion, Mondelez iTaste 2020</h4>
-              <p>Production automation proposal, national final.</p>
-            </div>
-          </div>
-          <p class="achieve-more reveal">+ 13 more awards from robotics, hackathons, and case competitions.</p>
         </div>
       </div>
     </section>
