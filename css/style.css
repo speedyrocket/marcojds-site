@@ -375,6 +375,77 @@ code, .mono {
   padding: 80px 0;
   border-top: 1px solid var(--border);
   position: relative;
+  overflow: hidden;
+}
+
+/* Ambient drifting background glow — echoes the hero's living particle network
+   with a slower, organic motion so every section feels alive, not just the top. */
+.ambient-blob {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.28;
+}
+
+#projects .ambient-blob {
+  top: -140px;
+  right: -120px;
+  background: radial-gradient(circle, var(--accent), transparent 70%);
+  animation: driftA 22s ease-in-out infinite alternate;
+}
+
+#about .ambient-blob {
+  width: 380px;
+  height: 380px;
+  bottom: -160px;
+  left: -100px;
+  background: radial-gradient(circle, var(--accent-2), transparent 70%);
+  animation: driftB 26s ease-in-out infinite alternate;
+}
+
+#contact .ambient-blob {
+  width: 340px;
+  height: 340px;
+  top: -120px;
+  left: 45%;
+  background: radial-gradient(circle, var(--accent-3), transparent 70%);
+  animation: driftC 19s ease-in-out infinite alternate;
+}
+
+@keyframes driftA {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(-70px, 60px) scale(1.15);
+  }
+}
+
+@keyframes driftB {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(60px, -50px) scale(1.12);
+  }
+}
+
+@keyframes driftC {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(-50px, 40px) scale(1.1);
+  }
+}
+
+.section > .container {
+  position: relative;
+  z-index: 1;
 }
 
 .section-alt {
@@ -523,6 +594,13 @@ code, .mono {
   font-family: var(--mono);
   font-size: 0.88rem;
   line-height: 1.7;
+}
+
+.editor-cursor {
+  display: inline-block;
+  background: var(--accent-2);
+  width: 8px;
+  animation: blink 1s step-end infinite;
 }
 
 .tok-comment {
@@ -788,8 +866,38 @@ code, .mono {
   justify-content: center;
   font-size: 1.1rem;
   border: 1px solid var(--badge-color, var(--accent));
-  box-shadow: 0 0 16px -3px var(--badge-color, var(--accent));
   background: radial-gradient(circle, rgba(255, 255, 255, 0.08), transparent 70%);
+  animation: badgeGlow 2.6s ease-in-out infinite;
+}
+
+.badge-card:nth-child(2) .badge-icon {
+  animation-delay: 0.3s;
+}
+
+.badge-card:nth-child(3) .badge-icon {
+  animation-delay: 0.6s;
+}
+
+.badge-card:nth-child(4) .badge-icon {
+  animation-delay: 0.9s;
+}
+
+.badge-card:nth-child(5) .badge-icon {
+  animation-delay: 1.2s;
+}
+
+.badge-card:nth-child(6) .badge-icon {
+  animation-delay: 1.5s;
+}
+
+@keyframes badgeGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 10px -4px var(--badge-color, var(--accent));
+  }
+  50% {
+    box-shadow: 0 0 20px 0px var(--badge-color, var(--accent));
+  }
 }
 
 .badge-title {
@@ -866,6 +974,25 @@ code, .mono {
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.05);
   color: var(--accent-2);
+  animation: iconFloat 3.2s ease-in-out infinite;
+}
+
+.contact-card:nth-child(2) .contact-icon {
+  animation-delay: 0.4s;
+}
+
+.contact-card:nth-child(3) .contact-icon {
+  animation-delay: 0.8s;
+}
+
+@keyframes iconFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
 }
 
 .contact-icon svg {
@@ -955,7 +1082,14 @@ code, .mono {
   }
 
   .typewriter-cursor,
-  .term-cursor {
+  .term-cursor,
+  .editor-cursor {
+    animation: none;
+  }
+
+  .ambient-blob,
+  .badge-icon,
+  .contact-icon {
     animation: none;
   }
 }
