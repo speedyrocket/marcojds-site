@@ -6,12 +6,20 @@
   <title>Marco JDS</title>
   <meta name="description" content="Marco JDS — personal site and home for my projects." />
   <link rel="icon" href="data:," />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+  <div class="scroll-progress" id="scroll-progress"></div>
+
   <header class="site-header">
     <div class="container header-inner">
-      <a class="logo" href="#top">marcojds</a>
+      <a class="logo" href="#top"><span class="logo-bracket">&lt;</span>marcojds<span class="logo-bracket">/&gt;</span></a>
       <nav class="nav">
         <a href="#projects">Projects</a>
         <a href="#about">About</a>
@@ -22,34 +30,62 @@
 
   <main>
     <section id="top" class="hero">
+      <canvas id="bg-canvas" aria-hidden="true"></canvas>
       <div class="container hero-inner">
-        <p class="eyebrow">Welcome</p>
-        <h1>Hi, I'm Marco.</h1>
-        <p class="lede">
-          This is my little corner of the internet — home base for the projects
-          I build, break, and (eventually) finish.
-        </p>
-        <div class="cta-row">
-          <a class="btn btn-primary" href="#projects">See projects</a>
-          <a class="btn btn-ghost" href="#contact">Get in touch</a>
+        <div class="hero-text reveal">
+          <p class="eyebrow">// welcome</p>
+          <h1>Hi, I'm <span class="gradient-text">Marco</span>.</h1>
+          <p class="lede">
+            I build
+            <span class="typewriter"><span id="typewriter-text"></span><span class="typewriter-cursor">&nbsp;</span></span>
+          </p>
+          <p class="lede lede-sub">
+            This is my little corner of the internet — home base for the projects
+            I build, break, and (eventually) finish.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#projects">See projects</a>
+            <a class="btn btn-ghost" href="#contact">Get in touch</a>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal" style="transition-delay: 120ms;">
+          <div class="terminal">
+            <div class="terminal-header">
+              <span class="dot dot-red"></span>
+              <span class="dot dot-yellow"></span>
+              <span class="dot dot-green"></span>
+              <span class="terminal-title">marco@marcojds:~</span>
+            </div>
+            <div class="terminal-body" id="terminal-body">
+              <p><span class="prompt">$</span> whoami</p>
+              <p class="output">marco — developer &amp; builder</p>
+              <p><span class="prompt">$</span> cat status.txt</p>
+              <p class="output">Shipping projects, one commit at a time.</p>
+              <p><span class="prompt">$</span> <span class="term-cursor">&nbsp;</span></p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="projects" class="section">
       <div class="container">
-        <h2>Projects</h2>
-        <p class="section-lede">Nothing published just yet — new things are on the way.</p>
+        <h2 class="reveal"><span class="section-index">01</span>Projects</h2>
+        <p class="section-lede reveal">Nothing published just yet — new things are on the way.</p>
         <div class="card-grid">
-          <div class="card card-placeholder">
+          <div class="card card-placeholder reveal">
+            <span class="card-index">01</span>
             <h3>Coming soon</h3>
             <p>A new project is in the works.</p>
           </div>
-          <div class="card card-placeholder">
+          <div class="card card-placeholder reveal" style="transition-delay: 80ms;">
+            <span class="card-index">02</span>
             <h3>Coming soon</h3>
             <p>A new project is in the works.</p>
           </div>
-          <div class="card card-placeholder">
+          <div class="card card-placeholder reveal" style="transition-delay: 160ms;">
+            <span class="card-index">03</span>
             <h3>Coming soon</h3>
             <p>A new project is in the works.</p>
           </div>
@@ -59,8 +95,8 @@
 
     <section id="about" class="section section-alt">
       <div class="container">
-        <h2>About</h2>
-        <p class="section-lede">
+        <h2 class="reveal"><span class="section-index">02</span>About</h2>
+        <p class="section-lede reveal">
           I'm Marco — I like building software and shipping small projects.
           More details coming soon.
         </p>
@@ -69,9 +105,9 @@
 
     <section id="contact" class="section">
       <div class="container">
-        <h2>Contact</h2>
-        <p class="section-lede">Find me here:</p>
-        <ul class="link-list">
+        <h2 class="reveal"><span class="section-index">03</span>Contact</h2>
+        <p class="section-lede reveal">Find me here:</p>
+        <ul class="link-list reveal">
           <li><a href="https://github.com/speedyrocket" target="_blank" rel="noopener noreferrer">GitHub</a></li>
         </ul>
       </div>
@@ -81,6 +117,7 @@
   <footer class="site-footer">
     <div class="container footer-inner">
       <span>&copy; <span id="year"></span> Marco JDS</span>
+      <span class="footer-tech">Built with vanilla HTML, CSS &amp; JS — no frameworks.</span>
     </div>
   </footer>
 
