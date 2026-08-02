@@ -378,68 +378,83 @@ code, .mono {
   overflow: hidden;
 }
 
-/* Ambient drifting background glow — echoes the hero's living particle network
-   with a slower, organic motion so every section feels alive, not just the top. */
-.ambient-blob {
+/* Ambient floating particles — small glowing nodes that drift slowly, echoing the
+   hero's particle network so every section feels alive without a heavy glow blob. */
+.ambient-particles {
   position: absolute;
-  width: 420px;
-  height: 420px;
-  border-radius: 50%;
-  filter: blur(80px);
+  inset: 0;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.28;
+  overflow: hidden;
 }
 
-#projects .ambient-blob {
-  top: -140px;
-  right: -120px;
-  background: radial-gradient(circle, var(--accent), transparent 70%);
-  animation: driftA 22s ease-in-out infinite alternate;
+.ambient-dot {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  opacity: 0.6;
 }
 
-#about .ambient-blob {
-  width: 380px;
-  height: 380px;
-  bottom: -160px;
-  left: -100px;
-  background: radial-gradient(circle, var(--accent-2), transparent 70%);
-  animation: driftB 26s ease-in-out infinite alternate;
+.dot-a {
+  top: 16%;
+  left: 6%;
+  background: var(--accent);
+  box-shadow: 0 0 10px 2px var(--accent);
+  animation: floatA 13s ease-in-out infinite;
 }
 
-#contact .ambient-blob {
-  width: 340px;
-  height: 340px;
-  top: -120px;
-  left: 45%;
-  background: radial-gradient(circle, var(--accent-3), transparent 70%);
-  animation: driftC 19s ease-in-out infinite alternate;
+.dot-b {
+  top: 62%;
+  left: 92%;
+  background: var(--accent-2);
+  box-shadow: 0 0 10px 2px var(--accent-2);
+  animation: floatB 16s ease-in-out infinite;
+  animation-delay: 1.5s;
 }
 
-@keyframes driftA {
-  0% {
-    transform: translate(0, 0) scale(1);
-  }
+.dot-c {
+  top: 88%;
+  left: 42%;
+  background: var(--accent-3);
+  box-shadow: 0 0 10px 2px var(--accent-3);
+  animation: floatC 14s ease-in-out infinite;
+  animation-delay: 3s;
+}
+
+@keyframes floatA {
+  0%,
   100% {
-    transform: translate(-70px, 60px) scale(1.15);
+    transform: translate(0, 0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(26px, -28px);
+    opacity: 0.9;
   }
 }
 
-@keyframes driftB {
-  0% {
-    transform: translate(0, 0) scale(1);
-  }
+@keyframes floatB {
+  0%,
   100% {
-    transform: translate(60px, -50px) scale(1.12);
+    transform: translate(0, 0);
+    opacity: 0.45;
+  }
+  50% {
+    transform: translate(-30px, 24px);
+    opacity: 0.85;
   }
 }
 
-@keyframes driftC {
-  0% {
-    transform: translate(0, 0) scale(1);
-  }
+@keyframes floatC {
+  0%,
   100% {
-    transform: translate(-50px, 40px) scale(1.1);
+    transform: translate(0, 0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translate(20px, 22px);
+    opacity: 0.9;
   }
 }
 
@@ -447,6 +462,7 @@ code, .mono {
   position: relative;
   z-index: 1;
 }
+
 
 .section-alt {
   background: var(--bg-alt);
@@ -599,7 +615,9 @@ code, .mono {
 .editor-cursor {
   display: inline-block;
   background: var(--accent-2);
-  width: 8px;
+  width: 2px;
+  height: 1.1em;
+  vertical-align: text-bottom;
   animation: blink 1s step-end infinite;
 }
 
@@ -1087,7 +1105,7 @@ code, .mono {
     animation: none;
   }
 
-  .ambient-blob,
+  .ambient-dot,
   .badge-icon,
   .contact-icon {
     animation: none;
