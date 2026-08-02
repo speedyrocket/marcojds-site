@@ -498,14 +498,17 @@ code, .mono {
 
 .card {
   position: relative;
+  display: block;
   background: var(--surface);
   border: 1px solid var(--surface-border);
   border-radius: var(--radius);
   padding: 28px 24px;
+  color: inherit;
   transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .card:hover {
+  text-decoration: none;
   transform: translateY(-6px);
   border-color: rgba(110, 231, 183, 0.4);
   box-shadow: 0 16px 40px -20px rgba(110, 231, 183, 0.25);
@@ -522,6 +525,18 @@ code, .mono {
 .card h3 {
   margin: 0 0 8px;
   font-size: 1.1rem;
+}
+
+.card-link-arrow {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.card:hover .card-link-arrow {
+  transform: translate(2px, -2px);
+  color: var(--accent);
 }
 
 .card p {
@@ -682,6 +697,12 @@ code, .mono {
 .status-idea .status-dot {
   background: var(--accent-3);
   box-shadow: 0 0 0 0 rgba(192, 132, 252, 0.6);
+  animation: pulse 2s infinite;
+}
+
+.status-live .status-dot {
+  background: var(--accent);
+  box-shadow: 0 0 0 0 rgba(110, 231, 183, 0.6);
   animation: pulse 2s infinite;
 }
 
