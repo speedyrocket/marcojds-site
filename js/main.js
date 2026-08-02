@@ -49,7 +49,7 @@ const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)
   const el = document.getElementById("typewriter-text");
   if (!el) return;
 
-  const phrases = ["things.", "products.", "side projects.", "for the web."];
+  const phrases = ["things.", "solutions.", "because I love it."];
 
   if (prefersReducedMotion) {
     el.textContent = phrases[0];
